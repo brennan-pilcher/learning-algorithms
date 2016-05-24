@@ -8,7 +8,7 @@ public class LinearSearch
 		
 	}
 	
-	public long search(int[] input, int searchTarget)
+	public static int search(int[] input, int searchTarget)
 	{
 		int[] inputArray = input;
 		
