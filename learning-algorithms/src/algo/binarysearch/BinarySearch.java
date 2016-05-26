@@ -8,7 +8,7 @@ public class BinarySearch
 		
 	}
 	
-	public static int search (int targetValue, int[] inputArray)
+	public static int search (int[] inputArray, int targetValue)
 	{
 		int[] input = inputArray;
 		
@@ -37,6 +37,39 @@ public class BinarySearch
 		}
 		
 		return -1;
+	}
+	
+	public static int recursiveSearch (int[] inputArray, int targetValue, int start, int end)
+	{
+		int[] input = inputArray;
+		
+		if (input.length < 1)
+		{
+			return -1;
+		}
+		
+		int a = start;
+		int b;
+		int c = end;
+		
+		if (a<=c)
+		{
+			b = (int) Math.floor((a+c)/2);
+			if (input[b]==targetValue) { return b; }
+			else if (input[b] > targetValue)
+			{
+				return recursiveSearch(input, a, b-1, targetValue);
+			}
+			else
+			{
+				return recursiveSearch(input, b+1, c, targetValue);
+			}
+			
+		}
+		else
+		{
+			return -1;
+		}
 	}
 	
 }

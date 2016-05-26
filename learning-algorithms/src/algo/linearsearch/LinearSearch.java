@@ -8,19 +8,48 @@ public class LinearSearch
 		
 	}
 	
-	public static int search(int[] input, int searchTarget)
+	public static int search(int[] inputArray, int searchTarget)
 	{
-		int[] inputArray = input;
+		int[] input = inputArray;
 		
-		for (int i = 0; i < inputArray.length; i++)
+		if (input.length < 1)
 		{
-			if (inputArray[i] == searchTarget)
+			return -1;
+		}
+		
+		
+		for (int i = 0; i < input.length; i++)
+		{
+			if (input[i] == searchTarget)
 			{
 				return i;
 			}
 		}
 		
 		return -1;
+	}
+	
+
+	public static int recursiveSearch(int[] inputArray, int searchTarget, int i)
+	{
+		int[] input = inputArray;
+
+		if (input.length < 1)
+		{
+			return -1;
+		}
+		
+		
+		if (i > input.length) { return -1; }
+		
+		else if (input[i] == searchTarget)
+		{
+			return i;
+		}
+		else
+		{
+			return recursiveSearch(input, i+1, searchTarget);
+		}
 	}
 	
 }
