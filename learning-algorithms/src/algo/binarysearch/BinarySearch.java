@@ -58,11 +58,11 @@ public class BinarySearch
 			if (input[b]==targetValue) { return b; }
 			else if (input[b] > targetValue)
 			{
-				return recursiveSearch(input, a, b-1, targetValue);
+				return recursiveSearch(input, targetValue, a, b-1);
 			}
 			else
 			{
-				return recursiveSearch(input, b+1, c, targetValue);
+				return recursiveSearch(input, targetValue, b+1, c);
 			}
 			
 		}

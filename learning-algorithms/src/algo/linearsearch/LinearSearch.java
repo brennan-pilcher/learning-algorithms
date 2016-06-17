@@ -34,13 +34,7 @@ public class LinearSearch
 	{
 		int[] input = inputArray;
 
-		if (input.length < 1)
-		{
-			return -1;
-		}
-		
-		
-		if (i > input.length) { return -1; }
+		if (input.length < 1 || i >= input.length) { return -1; }
 		
 		else if (input[i] == searchTarget)
 		{
@@ -48,7 +42,7 @@ public class LinearSearch
 		}
 		else
 		{
-			return recursiveSearch(input, i+1, searchTarget);
+			return recursiveSearch(input, searchTarget, i+1);
 		}
 	}
 	
